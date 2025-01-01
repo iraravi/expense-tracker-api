@@ -12,11 +12,10 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Allow all endpoints
-                        .allowedOrigins("*") // Allow Angular app origin
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow all HTTP methods
-                        .allowedHeaders("*") // Allow all headers
-                        .allowCredentials(true); // Allow credentials (if needed)
+                registry.addMapping("/**")
+                        .allowedOrigins("https://expense.kiring.in") // List allowed origins explicitly
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowCredentials(true); // Allow credentials
             }
         };
     }
